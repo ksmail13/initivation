@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --font-nanum: "Nanum Myeongjo", sans-serif;
+  --font-nanum--font-weight: 400;
+
+  --font-nanum-bold: "Nanum Myeongjo", sans-serif;
+  --font-nanum-bold--font-weight: 700;
+}
