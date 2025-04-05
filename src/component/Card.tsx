@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 
 function Card({ children }: PropsWithChildren<{ no?: number }>) {
   return (
