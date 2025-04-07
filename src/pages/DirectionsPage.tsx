@@ -16,12 +16,12 @@ function DirectionsPage() {
             </iframe>
           </div>
           <div className="w-full mt-4 h-1/2 md:h-full overflow-y-auto">
-            <div className="mt-2 mb-2">
+            <div className="mt-2 mb-2 flex flex-col md:flex-row gap-2 justify-center">
               <a
                 href="https://naver.me/54LbuEe5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-10 pl-9 mx-1 text-stone-700 px-4 py-2 rounded font-nanum-gothic-bold bg-no-repeat bg-contain bg-white bg-size-[auto_20px] inline-block`}
+                className={`p-10 pl-9 mx-1 text-stone-700 px-4 py-2 rounded font-nanum-gothic-bold bg-no-repeat bg-contain bg-white bg-size-[auto_20px] block`}
                 style={{ backgroundImage: `url(${NaMapIco})`, backgroundPosition: '0.7rem' }}
               >
                 네이버 지도
@@ -30,7 +30,7 @@ function DirectionsPage() {
                 href="https://place.map.kakao.com/422822065"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-10 pl-9 mx-1 text-stone-700 px-4 py-2 rounded font-nanum-gothic-bold bg-no-repeat bg-contain bg-white bg-size-[auto_20px] inline-block`}
+                className={`p-10 pl-9 mx-1 text-stone-700 px-4 py-2 rounded font-nanum-gothic-bold bg-no-repeat bg-contain bg-white bg-size-[auto_20px] block`}
                 style={{ backgroundImage: `url(${kaMapIco})`, backgroundPosition: '0.7rem' }}
               >
                 카카오 맵
@@ -39,13 +39,13 @@ function DirectionsPage() {
                 href="https://tmap.life/bf17a3f8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-10 pl-9 mx-1 text-stone-700 px-4 py-2 rounded font-nanum-gothic-bold bg-no-repeat bg-contain bg-white bg-size-[auto_20px] inline-block`}
+                className={`p-10 pl-9 mx-1 text-stone-700 px-4 py-2 rounded font-nanum-gothic-bold bg-no-repeat bg-contain bg-white bg-size-[auto_20px] block`}
                 style={{ backgroundImage: `url(${TMapIco})`, backgroundPosition: '0.7rem' }}
               >
                 T 맵
               </a>
             </div>
-            <div className='p-10 pt-0 text-left whitespace-pre-wrap'>
+            <div className='md:p-10 md:pt-0 text-left whitespace-pre-wrap'>
               <div className='mb-3'>
                 <h5 className='font-bold text-lg'>[지하철 이용시]</h5>
                 <ul className='list-disc pl-[1rem]'><li>분당선, 신분당선 정자역 3번 출구 <br></br>(버스이용 또는 도보 15분)</li></ul>
@@ -64,7 +64,7 @@ function DirectionsPage() {
               </div>
               <div className=''>
                 <h5 className='font-bold text-lg'>[주차 안내]</h5>
-                <p>1784 건물과 그린 팩토리는 지하2층부터 5층 까지 연결되어 있습니다. 그린팩토리로 진입시 지하2층에서 1784 건물로 이동해 주차해주시면 됩니다.</p>
+                <p>1784 건물과 그린 팩토리는 지하2층부터 5층 까지 연결되어 있습니다. <br className='inline md:hidden' />그린팩토리로 진입시 지하2층에서 1784 건물로 이동해 주차해주시면 됩니다.</p>
               </div>
             </div>
           </div>
