@@ -1,6 +1,3 @@
-import React from 'react';
-
-const daysOfWeek = ['월', '화', '수', '목', '금', '토', '일'];
 
 // 2025년 7월의 날짜 배열 (7월 1일은 화요일)
 const calendarData = [

@@ -4,12 +4,6 @@ import Masonry from 'react-masonry-css';
 import Card from '../component/Card';
 import Modal from '../component/Modal';
 
-function Bump() {
-  return (
-    <div className='w-30'></div>
-  );
-}
-
 function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState('');
 
