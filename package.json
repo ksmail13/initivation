@@ -13,7 +13,8 @@
     "@tailwindcss/vite": "^4.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "require": "^2.4.20",
+    "react-masonry-css": "^1.0.16",
+    "require": "^0.4.4",
     "tailwindcss": "^4.1.0"
   },
   "devDependencies": {

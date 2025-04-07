@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 @theme {
+  --font-nanum-gothic: "Nanum Gothic", serif;
+
+  --font-nanum-gothic-bold: "Nanum Gothic", serif;
+  --font-nanum-gothic-bold--font-weight: 700;
+
   --font-nanum: "Nanum Myeongjo", sans-serif;
   --font-nanum--font-weight: 400;
 

@@ -1,25 +1,65 @@
 // src/pages/GalleryPage.js
+import { useState } from 'react';
+import Masonry from 'react-masonry-css';
 import Card from '../component/Card';
-import p1 from '../assets/p1.jpg';
-import p2 from '../assets/p2.jpg';
+import Modal from '../component/Modal';
+
+function Bump() {
+  return (
+    <div className='w-30'></div>
+  );
+}
 
 function GalleryPage() {
+  const [selectedImage, setSelectedImage] = useState('');
+
   const images = [
-    p1,
-    p2,
+    '/p1.jpg',
+    '/p2.jpg',
+    '/p1.jpg',
+    '/p2.jpg',
+    '/p1.jpg',
+    '/p2.jpg',
+    '/p1.jpg',
+    '/p2.jpg',
     // Add more photos as needed
   ];
 
+  const breakpointColumnsObj = {
+    default: 2,
+    768: 2,
+    480: 1,
+  };
+
   return (
     <Card>
-      <div className="w-full h-full bg-white overflow-hidden">
-        <div className="w-full h-full overflow-x-scroll snap-x snap-mandatory">
+      <div className='w-full h-full overflow-y-auto overflow-x-hidden'>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className='flex w-auto gap-4'
+          columnClassName='flex flex-col gap-4'
+        >
           {images.map((image, index) => (
-            <div key={index} className={`w-full h-full snap-start rounded-lg bg-[url(${image})]`}></div>
+            <div key={index}
+              className='cursor-pointer overflow-hidden rounded-2xl shadow transition-transform duration-300'
+              onClick={() => setSelectedImage(image)}
+            >
+              <img src={image} className='w-full object-cover' />
+            </div>
           ))}
-        </div>
+
+          {
+            selectedImage && (
+              <Modal
+                onClose={() => setSelectedImage('')}
+              >
+                <img src={selectedImage} alt="modal" className="max-h-[90vh] max-w-full object-contain rounded-xl" />
+              </Modal>
+            )
+          }
+        </Masonry>
       </div>
-    </Card>
+    </Card >
   );
 };
 
