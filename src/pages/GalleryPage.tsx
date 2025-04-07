@@ -38,7 +38,7 @@ function GalleryPage() {
               className='cursor-pointer overflow-hidden rounded-2xl shadow transition-transform duration-300'
               onClick={() => setSelectedImage(image)}
             >
-              <img src={image} className='w-full object-cover' />
+              <img src={`/invitation/${image}`} className='w-full object-cover' />
             </div>
           ))}
 
@@ -47,7 +47,7 @@ function GalleryPage() {
               <Modal
                 onClose={() => setSelectedImage('')}
               >
-                <img src={selectedImage} alt="modal" className="max-h-[90vh] max-w-full object-contain rounded-xl" />
+                <img src={`/invitation/${selectedImage}`} alt="modal" className="max-h-[90vh] max-w-full object-contain rounded-xl" />
               </Modal>
             )
           }
