@@ -1,18 +1,9 @@
 name: Build and Deploy
-on:   # 기본 브랜치에 대한 푸시 이벤트 발생 시 실행
-  push:
-    branches: ['master']
-  # Actions 탭에서 수동으로 워크플로우를 실행할 수 있도록 구성
-  workflow_dispatch:
+on: [push]
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 jobs:
   build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -22,17 +13,12 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - name: Install 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: npm ci
-      - name: Build 🔨
-        run: npm run build
-      - name: Setup page
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # dist 디렉터리 업로드
-          path: './dist'
-      - name: Deploy to GitHub Pages 🚀
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: dist # The folder the action should deploy.
