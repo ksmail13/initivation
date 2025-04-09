@@ -12,7 +12,7 @@ function InvitationPage() {
   }, []);
 
   const date = new Intl.DateTimeFormat(
-    "en-US",
+    "ko-KR",
     {
       weekday: "long",
       year: "numeric",

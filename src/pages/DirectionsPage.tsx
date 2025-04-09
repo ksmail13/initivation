@@ -2,9 +2,9 @@
 import Card from '../component/Card';
 
 function DirectionsPage() {
-  const kaMapIco = './kakaomap_basic.png';
-  const NaMapIco = './Map_Service_Icon.png';
-  const TMapIco = './tmap_icon.jpeg';
+  const kaMapIco = './invitation/kakaomap_basic.png';
+  const NaMapIco = './invitation/Map_Service_Icon.png';
+  const TMapIco = './invitation/tmap_icon.jpeg';
   return (
     <Card>
       <div className="text-center h-full">
